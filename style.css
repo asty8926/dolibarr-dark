@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    
+    box-sizing: border-box;
+}
+
+:root {
+    
+    /* Custom */
+    --fonts: "Inter", Lato, Helvetica, Arial, sans-serif;
+    --primary: #191A23;
+    --primary-hover: rgb(38, 39, 54);
+    --border-color: rgb(44, 45, 60);
+    --border2: 1px solid rgba(82, 82, 111, 0.44);
+    --inputbg: rgb(39, 41, 57);
+    --glass: blur(10px) saturate(190%) contrast(70%) brightness(80%); /* backdrop-filter: prop */
+    --glassbg: rgba(29, 30, 43, 0.498);
+    --radius: 8px;
+    --buttonradius: 4px;
+    --buttonbg: #575AC6;
+    --buttonbghover: rgb(100, 102, 216);
+    --secondary: var(--buttonbg);
+    --tertiary: rgb(29, 29, 42);
+    --dimmedtext: rgb(133, 134, 153);
+    --focustextcolor: rgb(238, 239, 252);
+    --pad-around: 1.5rem;
+    --pad-inline: 1.5rem;
+    
+    /* Dolibarr Override */
+    --colorbackhmenu1: var(--primary);
+    --colorbackhmenu: var(--primary);
+    --colortextbackhmenu: var(--colortext);
+    --colorbackvmenu1: var(--primary);
+    --colortextbackvmenu: var(--colortext);
+    --colortext: rgb(210, 211, 224);
+    --colortextlink: var(--colortext);
+    --colorbackbody: var(--primary);
+    --inputbackgroundcolor: var(--inputbg);
+    --butactionbg: var(--buttonbg);
+    --colortextbacktab: var(--colortext);
+    --refidnocolor: var(--colortext);
+    --colorbacktabcard1: var(--tertiary);
+    --colortexttitlenotab: var(--secondary);
+    --tableforfieldcolor: var(--dimmedtext);
+    --colorbacktitle1: #21232E;
+    --colortexttitle: var(--colortext);
+    --colortexttitlelink: var(--colortext);
+    
+    
+    --boxshadow: 1px 2px 10px var(--colorbackvmenu1);
+}
+
+body, .mainmenuaspan {
+    font-family: var(--fonts);
+}
+
+.side-nav {
+    border-right: 1px solid var(--border-color);
+    padding-inline: .5rem 1rem;
+}
+
+/*.side-nav, .vmenu {
+    background-color: var(--primary);
+}*/
+
+div.blockvmenupair, div.blockvmenuimpair, div.blockvmenubookmarks, div.blockvmenuend,
+a.vmenu:link, a.vmenu:visited, a.vsmenu:link, a.vsmenu:visited {
+    color: var(--colortext);
+}
+
+.blockvmenusearch .select2-container--default .select2-selection--single, .blockvmenubookmarks .select2-container--default .select2-selection--single {
+    background-color: var(--inputbg);
+    
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: var(--primary-hover);
+    color: var(--colortext);
+}
+
+/* Tag Etiquette */
+.select2-container-multi-dolibarr .select2-choices-dolibarr .select2-search-choice-dolibarr {
+    padding: .5rem .8rem;
+    background-color: var(--tertiary) !important;
+    border: var(--border2) !important;
+}
+
+.paddingright {
+    padding-right: .5rem;
+}
+
+.select2-container-multi-dolibarr .select2-choices-dolibarr .select2-search-choice-dolibarr a {
+    color: var(--colortext) !important;
+}
+
+.select2-dropdown {
+    box-shadow: var(--boxshadow);
+    backdrop-filter: var(--glass);
+    background-color: var(--glassbg);
+    border: var(--border2);
+    border-radius: var(--radius);
+}
+
+.butActionRefused, .butAction, .butAction:link, .butAction:visited, .butAction:hover, .butAction:active, .butActionDelete, .butActionDelete:link, .butActionDelete:visited, .butActionDelete:hover, .butActionDelete:active {
+    border-radius: var(--buttonradius);
+    text-transform: none;   
+    font-weight: normal;
+}
+
+.butAction:hover {
+    background-color: var(--buttonbghover);
+}
+
+
+div.phpdebugbar {
+    display: none;
+}
+
+#id-top {
+    border-bottom: var(--border2);
+}
+
+form {
+    height: 100%;
+}
+
+div.fiche {
+    background-color: var(--tertiary);
+    border-radius: var(--radius);
+    /*padding: var(--pad-around);*/
+    padding-top: 0;
+    height: 100%;
+    border: 1px solid var(--border-color);
+}
+
+div.tabs {
+    position: sticky;
+    top: 3rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--primary);
+    backdrop-filter: var(glass);
+    box-shadow: var(--boxshadow);
+    z-index: 5;
+    padding-inline: var(--pad-inline);
+    margin-top: 0;
+    padding-block: 1rem;
+}
+
+div.tabsAction {
+    margin-bottom: 0;
+    padding-inline: var(--pad-inline);
+    text-align: center;
+}
+
+div.tabBar {
+    border-top: 1px solid var(--border-color);
+    padding-inline: var(--pad-inline);
+}
+
+div.tabsElem > .tab, div.tabsElem a.tab {
+    border-radius: var(--buttonradius);
+    text-decoration: none;
+}
+
+div.tabsElem:hover {
+    background-color: var(--primary-hover);
+    border-radius: var(--buttonradius);
+}
+
+.tabactive, a.tab#active {
+    border: none !important;
+    background-color: var(--primary-hover) !important;
+}
+
+a.tab:link, a.tab:visited, a.tab:hover, a.tab#active {
+    font-family: var(--fonts);
+}
+
+div.tabsElem .tabactive a.tab {
+    color: var(--focustextcolor);
+    font-weight: 400;
+}
+
+.menu_contenu {
+    padding-bottom: .5rem;
+}
+
+.menu_contenu:hover, .menu_titre:hover {
+    background-color: var(--primary-hover);
+    border-radius: var(--buttonradius);
+}
+
+.menu_contenu > a.vsmenu, .menu_titre > a.vmenu{
+    text-decoration: none;
+}
+
+div.blockvmenupair, div.blockvmenuimpair {
+    border-bottom-color: var(--border-color);
+}
+
+ul.tmenu > .tmenusel, ul.tmenu > li.tmenu:hover {
+    background-color: var(--primary-hover);
+}
+
+ul.tmenu > .tmenusel::after, ul.tmenu > li.tmenu:hover::after {
+    display: none;
+}
+
+div.tmenucenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    padding: 1rem;
+}
+
+div.mainmenu {
+    min-width: auto;
+}
+
+div.tabBar .fichecenter table.border > tbody > tr > td, div.tabBar .fichecenter div.border div div.tagtd, div.tabBar div.border div div.tagtd {
+    border-bottom: none;
+}
+
+div.tabBar .fichecenter table.border > tbody > tr > td:first-child, div.tabBar .fichecenter div.border div div.tagtd:first-child, div.tabBar div.border div div.tagtd:first-child {
+    font-size: 1rem;   
+}
+
+a.tabTitle {
+    text-shadow: none;
+}
+
+/* Border-bottom of all table items */
+div.tabBar .fichecenter table.border > tbody > tr > td:not(:first-child), div.tabBar .fichecenter div.border div div.tagtd:not(:first-child), div.tabBar div.border div div.tagtd:not(:first-child) {
+    border-bottom: 1px solid var(--border-color);
+    /*padding: 1rem .5rem;*/
+    padding-block: 1rem;
+    margin-bottom: .5rem;
+}
+
+.underbanner {
+    /*border-bottom: 1px solid var(--border-color);*/
+    border-bottom: none;
+}
+
+@media only screen and (max-width: 880px, min-width: 544px) {
+    div.tmenucenter {
+        width: auto;
+    }
+}
+
+td.amount, span.amount, div.amount, b.amount {
+    color: var(--secondary);
+}
+
+.badge {
+    font-weight: 500 !important;
+}
+
+div.tmenudiv {
+    font-size: 0.92em;
+}
+
+.border tbody tr, .bordernooddeven tbody tr, .border tbody tr td, .bordernooddeven tbody tr td, div.tabBar table.border tr, div.tabBar table.border tr td, div.tabBar div.border .table-border-row, div.tabBar div.border .table-key-border-col, div.tabBar div.border .table-val-border-col, tr.liste_titre.box_titre td table td, .bordernooddeven tr td {
+    height: auto;
+}
+
+.border tbody tr, .bordernooddeven tbody tr, div.tabBar table.border tr {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+div.fichehalfleft tbody, div.fichehalfright tbody {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+}
+
+div.fichehalfright tbody {
+    flex-direction: column;
+}
+
+tr.liste_titre, tr.liste_titre_sel, form.liste_titre, form.liste_titre_sel, table.dataTable.tr, tagtr.liste_titre {
+    height: auto !important;
+}
+
+table.liste, table.noborder, table.formdoc, div.noborder {
+    border-top: none;
+}
