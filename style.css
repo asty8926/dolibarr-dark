@@ -1,370 +1,595 @@
+/* Dolibarr Theme Rework by Asty' */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
-    
-    box-sizing: border-box;
+
+	box-sizing: border-box;
 }
 
 
 :root {
-    
-    /* Custom */
-    --fonts: "Inter", Lato, Helvetica, Arial, sans-serif;
-    --primary: #191A23;
-    --primary-hover: rgb(38, 39, 54);
-    --border-color: rgb(44, 45, 60);
-    --border2: 1px solid rgba(82, 82, 111, 0.44);
-    --inputbg: rgb(39, 41, 57);
-    --glass: blur(10px) saturate(190%) contrast(70%) brightness(80%); /* backdrop-filter: prop */
-    --glassbg: rgba(29, 30, 43, 0.498);
-    --radius: 8px;
-    --buttonradius: 4px;
-    --buttonbg: #575AC6;
-    --buttonbghover: rgb(100, 102, 216);
-    --secondary: var(--buttonbg);
-    --tertiary: rgb(29, 29, 42);
-    --dimmedtext: rgb(133, 134, 153);
-    --focustextcolor: rgb(238, 239, 252);
-    --pad-around: 1.5rem;
-    --pad-inline: 1.5rem;
-    
-    /* Dolibarr Override */
-    --colorbackhmenu1: var(--primary);
-    --colorbackhmenu: var(--primary);
-    --colortextbackhmenu: var(--colortext);
-    --colorbackvmenu1: var(--primary);
-    --colortextbackvmenu: var(--colortext);
-    --colortext: rgb(210, 211, 224);
-    --colortextlink: var(--colortext);
-    --colorbackbody: var(--primary);
-    --inputbackgroundcolor: var(--inputbg);
-    --butactionbg: var(--buttonbg);
-    --colortextbacktab: var(--colortext);
-    --refidnocolor: var(--colortext);
-    --colorbacktabcard1: var(--tertiary);
-    --colortexttitlenotab: var(--secondary);
-    --tableforfieldcolor: var(--dimmedtext);
-    --colorbacktitle1: #21232E;
-    --colortexttitle: var(--colortext);
-    --colortexttitlelink: var(--colortext);
-    --colorbacklineimpair2: var(--tertiary);
-    --oddevencolor: var(--colortext);
-    --colorbacklinepairhover: var(--primary-hover);
-    
-    
-    --boxshadow: 1px 2px 10px var(--colorbackvmenu1);
+
+	/* Custom */
+	--fonts: "Inter", Lato, Helvetica, Arial, sans-serif;
+	--primary: hsl(234, 17%, 12%);
+	--primary-hover: hsl(236, 17%, 18%);
+	--border-color: hsl(236, 15%, 20%);
+	--border-color2: hsla(240, 15%, 38%, .44);
+	--border2: 1px solid var(--border-color2);
+	--inputbg: hsl(233, 19%, 19%);
+	--glass: blur(10px) saturate(190%) contrast(70%) brightness(80%);
+	/* backdrop-filter: prop */
+	--glassbg: hsla(236, 19%, 14%, .498);
+	--radius: 8px;
+	--buttonradius: 4px;
+	--buttonbg: hsl(238, 49%, 56%);
+	--buttonbghover: hsl(239, 60%, 62%);
+	--secondary: var(--buttonbg);
+	--tertiary: hsl(240, 18%, 14%);
+	--dimmedtext: hsl(237, 9%, 56%);
+	--focustextcolor: hsl(236, 70%, 96%);
+	--pad-around: 1.5rem;
+	--pad-inline: 1.5rem;
+
+	/* Dolibarr Override */
+	--colorbackhmenu1: var(--primary);
+	--colorbackhmenu: var(--primary);
+	--colortextbackhmenu: var(--colortext);
+	--colorbackvmenu1: var(--primary);
+	--colortextbackvmenu: var(--colortext);
+	--colortext: hsl(236, 18%, 85%);
+	--colortextlink: var(--colortext);
+	--colorbackbody: var(--primary);
+	--inputbackgroundcolor: var(--inputbg);
+	--butactionbg: var(--buttonbg);
+	--colortextbacktab: var(--colortext);
+	--refidnocolor: var(--colortext);
+	--colorbacktabcard1: var(--tertiary);
+	--colortexttitlenotab: var(--secondary);
+	--tableforfieldcolor: var(--dimmedtext);
+	--colorbacktitle1: hsl(231, 16%, 15%);
+	--colortexttitle: var(--colortext);
+	--colortexttitlelink: var(--colortext);
+	--colorbacklineimpair2: var(--tertiary);
+	--oddevencolor: var(--colortext);
+	--colorbacklinepairhover: var(--primary-hover);
+	--btncolorbg: var(--buttonbg);
+	--btncolortext: var(--colortext);
+	--btncolorborder: var(--border-color2);
+	--colorblack: var(--colortext);
+
+	--boxshadow: 1px 2px 10px var(--colorbackvmenu1);
 }
 
 /* Applies the theme font to ALL elements that had explicit font assignment */
-body, .mainmenuaspan, a.vsmenu:link, a.vsmenu:visited, a.vsmenu:hover, a.vsmenu:active, span.vsmenu, tr.liste_titre th, th.liste_titre, tr.liste_titre td, td.liste_titre, form.liste_titre div, a.tab:link, a.tab:visited, a.tab:hover, a.tab#active, span.vsmenudisabled, font.vsmenudisabled, span.vmenudisabled, font.vmenudisabled, .oddeven, .evenodd, .pair, .nohover .pair:hover, tr.pair td.nohover, .tagtr.oddeven, div.blockvmenuhelp, input, input.flat, textarea, textarea.flat, form.flat select, select, select.flat, .dataTables_length label select, .button:not(.bordertransp):not(.buttonpayment), .buttonDelete:not(.bordertransp):not(.buttonpayment) {
-    font-family: var(--fonts);
+body,
+.mainmenuaspan,
+a.vsmenu:link,
+a.vsmenu:visited,
+a.vsmenu:hover,
+a.vsmenu:active,
+span.vsmenu,
+tr.liste_titre th,
+th.liste_titre,
+tr.liste_titre td,
+td.liste_titre,
+form.liste_titre div,
+a.tab:link,
+a.tab:visited,
+a.tab:hover,
+a.tab#active,
+span.vsmenudisabled,
+font.vsmenudisabled,
+span.vmenudisabled,
+font.vmenudisabled,
+.oddeven,
+.evenodd,
+.pair,
+.nohover .pair:hover,
+tr.pair td.nohover,
+.tagtr.oddeven,
+div.blockvmenuhelp,
+input,
+input.flat,
+textarea,
+textarea.flat,
+form.flat select,
+select,
+select.flat,
+.dataTables_length label select,
+.button:not(.bordertransp):not(.buttonpayment),
+.buttonDelete:not(.bordertransp):not(.buttonpayment),
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button,
+.ui-widget {
+	font-family: var(--fonts);
 }
 
-.badge-secondary, .tabs .badge {
-    color: var(--colortext) !important;
-    background-color: var(--secondary);
+input[type="text"] {
+	padding: .5rem .7rem;
+	border-radius: var(--buttonradius);
+}
+
+.fa,
+.fas {
+	color: var(--colortext);
+}
+
+.badge-secondary,
+.tabs .badge {
+	color: var(--colortext) !important;
+	background-color: var(--secondary);
 }
 
 .marginleftonlyshort {
-    margin-left: 6px !important;
+	margin-left: 6px !important;
+}
+
+.maxwidthdate {
+	max-width: 105px;
+}
+
+.infobox-adherent,
+.infobox-member {
+	color: var(--secondary;
+	)
 }
 
 .side-nav {
-    border-right: 1px solid var(--border-color);
-    padding-inline: .5rem 1rem;
-    box-shadow: none;
-    height: calc(100vh - 3.15rem);
-    overflow-y: hidden;
+	border-right: 1px solid var(--border-color);
+	padding-inline: .5rem 1rem;
+	box-shadow: none;
+	height: calc(100vh - 3.15rem);
+	overflow-y: hidden;
 }
 
 /*.side-nav, .vmenu {
     background-color: var(--primary);
 }*/
-
-div.blockvmenupair, div.blockvmenuimpair, div.blockvmenubookmarks, div.blockvmenuend,
-a.vmenu:link, a.vmenu:visited, a.vsmenu:link, a.vsmenu:visited {
-    color: var(--colortext);
+div.blockvmenupair,
+div.blockvmenuimpair,
+div.blockvmenubookmarks,
+div.blockvmenuend,
+a.vmenu:link,
+a.vmenu:visited,
+a.vsmenu:link,
+a.vsmenu:visited {
+	color: var(--colortext);
 }
 
-.blockvmenusearch .select2-container--default .select2-selection--single, .blockvmenubookmarks .select2-container--default .select2-selection--single {
-    background-color: var(--inputbg);
-    
+.blockvmenusearch .select2-container--default .select2-selection--single,
+.blockvmenubookmarks .select2-container--default .select2-selection--single {
+	background-color: var(--inputbg);
 }
 
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
-    background-color: var(--primary-hover);
-    color: var(--colortext);
+	background-color: var(--primary-hover);
+	color: var(--colortext);
 }
 
 /* Tag Etiquette */
 .select2-container-multi-dolibarr .select2-choices-dolibarr .select2-search-choice-dolibarr {
-    padding: .5rem .8rem;
-    background-color: var(--tertiary) !important;
-    border: var(--border2) !important;
+	padding: .5rem .8rem;
+	background-color: var(--tertiary) !important;
+	border: var(--border2) !important;
 }
 
 .paddingright {
-    padding-right: .5rem;
+	padding-right: .5rem;
 }
 
 .select2-container-multi-dolibarr .select2-choices-dolibarr .select2-search-choice-dolibarr a {
-    color: var(--colortext) !important;
+	color: var(--colortext) !important;
 }
 
 .select2-dropdown {
-    box-shadow: var(--boxshadow);
-    backdrop-filter: var(--glass);
-    background-color: var(--glassbg);
-    border: var(--border2);
-    border-radius: var(--radius);
+	box-shadow: var(--boxshadow);
+	backdrop-filter: var(--glass);
+	background-color: var(--glassbg);
+	border: var(--border2);
+	border-radius: var(--radius);
 }
 
-.dropdown-menu, .dropdown-menu > .user-footer {
-    background-color: var(--tertiary);
-    color: var(--colortext);
-    /*border-top: var(--border2);*/
+.dropdown-menu,
+.dropdown-menu > .user-footer {
+	background-color: var(--tertiary);
+	color: var(--colortext);
+	/*border-top: var(--border2);*/
 }
 
-.dropdown-menu > .user-body, .dropdown-body {
-    border-block: var(--border2);
+.dropdown-menu > .user-body,
+.dropdown-body {
+	border-block: var(--border2);
 }
 
-.user-body, #topmenuloginmoreinfo-btn, #topmenulogincompanyinfo-btn, .dropdown-menu > .user-footer {
-    color: var(--colortext);
+.user-body,
+#topmenuloginmoreinfo-btn,
+#topmenulogincompanyinfo-btn,
+.dropdown-menu > .user-footer {
+	color: var(--colortext);
 }
 
-.user-footer .button-top-menu-dropdown {
-    border-radius: var(--buttonradius);
-    background-color: var(--secondary);
-    color: var(--colortext);
-    border: none;
-    padding: .5rem .9rem;
+/* Everything button related */
+.user-footer .button-top-menu-dropdown,
+.button:not(.bordertransp):not(.buttonpayment),
+.buttonDelete:not(.bordertransp):not(.buttonpayment),
+.btnTitle,
+a.btnTitle {
+	border-radius: var(--buttonradius);
+	background-color: var(--buttonbg);
+	color: var(--colortext);
+	border: none;
+	padding: .5rem .9rem;
+	text-transform: none;
+	font-weight: normal;
 }
 
-.user-footer .button-top-menu-dropdown:hover {
-    background-color: var(--buttonbghover);
+.user-footer .button-top-menu-dropdown:hover,
+.button:not(.bordertransp):not(.buttonpayment):hover,
+.buttonDelete:not(.bordertransp):not(.buttonpayment):hover,
+.btnTitle:hover,
+a.btnTitle:hover {
+	background-color: var(--buttonbghover);
+	border: var(--border2);
 }
 
-.butActionRefused, .butAction, .butAction:link, .butAction:visited, .butAction:hover, .butAction:active, .butActionDelete, .butActionDelete:link, .butActionDelete:visited, .butActionDelete:hover, .butActionDelete:active {
-    border-radius: var(--buttonradius);
-    text-transform: none;   
-    font-weight: normal;
+.paginationafterarrows a.btnTitlePlus:hover span::before,
+.titre_right a.btnTitlePlus:hover span::before {
+	font-size: inherit;
 }
 
+.user-footer .button-top-menu-dropdown:hover,
 .butAction:hover {
-    background-color: var(--buttonbghover);
+	background-color: var(--buttonbghover);
 }
 
-.button:not(.bordertransp):not(.buttonpayment), .buttonDelete:not(.bordertransp):not(.buttonpayment) {
-    text-transform: none;
-    font-weight: normal;
+.butActionRefused,
+.butAction,
+.butAction:link,
+.butAction:visited,
+.butAction:hover,
+.butAction:active,
+.butActionDelete,
+.butActionDelete:link,
+.butActionDelete:visited,
+.butActionDelete:hover,
+.butActionDelete:active {
+	border-radius: var(--buttonradius);
+	text-transform: none;
+	font-weight: normal;
+}
+
+.button:not(.bordertransp):not(.buttonpayment),
+.buttonDelete:not(.bordertransp):not(.buttonpayment) {
+	text-transform: none;
+	font-weight: normal;
 }
 
 /* Add some right margin after icons in user pop-up button */
 .button-top-menu-dropdown > i.fa {
-    margin-right: .2rem;
+	margin-right: .2rem;
 }
 
 div.phpdebugbar {
-    display: none;
+	display: none;
 }
 
 #id-top {
-    border-bottom: var(--border2);
+	border-bottom: var(--border2);
 }
 
 form {
-    height: 100%;
+	height: 100%;
 }
 
 div.fiche {
-    background-color: var(--tertiary);
-    border-radius: var(--radius);
-    /*padding: var(--pad-around);*/
-    padding-top: 0;
-    height: 100%;
-    border: 1px solid var(--border-color);
-    color: var(--colortext);
+	background-color: var(--tertiary);
+	border-radius: var(--radius);
+	/*padding: var(--pad-around);*/
+	padding-top: 0;
+	height: 100%;
+	border: 1px solid var(--border-color);
+	color: var(--colortext);
 }
 
 div.tabs {
-    position: sticky;
-    top: 3rem;
-    border-bottom: 1px solid var(--border-color);
-    background-color: var(--primary);
-    backdrop-filter: var(glass);
-    box-shadow: var(--boxshadow);
-    z-index: 5;
-    padding-inline: var(--pad-inline);
-    margin-top: 0;
-    padding-block: 1rem;
+	position: sticky;
+	top: 3rem;
+	border-bottom: 1px solid var(--border-color);
+	background-color: var(--primary);
+	backdrop-filter: var(glass);
+	box-shadow: var(--boxshadow);
+	z-index: 5;
+	padding-inline: var(--pad-inline);
+	margin-top: 0;
+	padding-block: 1rem;
 }
 
 div.tabsAction {
-    margin-bottom: 0;
-    padding-inline: var(--pad-inline);
-    text-align: center;
+	margin-bottom: 0;
+	padding-inline: var(--pad-inline);
+	text-align: center;
 }
 
 div.tabBar {
-    border-top: 1px solid var(--border-color);
-    padding-inline: var(--pad-inline);
+	border-top: 1px solid var(--border-color);
+	padding-inline: var(--pad-inline);
 }
 
-div.tabsElem > .tab, div.tabsElem a.tab {
-    border-radius: var(--buttonradius);
-    text-decoration: none;
+div.tabsElem > .tab,
+div.tabsElem a.tab {
+	border-radius: var(--buttonradius);
+	text-decoration: none;
 }
 
 div.tabsElem:hover {
-    background-color: var(--primary-hover);
-    border-radius: var(--buttonradius);
+	background-color: var(--primary-hover);
+	border-radius: var(--buttonradius);
 }
 
-.tabactive, a.tab#active {
-    border: none !important;
-    background-color: var(--primary-hover) !important;
+.tabactive,
+a.tab#active {
+	border: none !important;
+	background-color: var(--primary-hover) !important;
 }
 
 div.tabsElem .tabactive a.tab {
-    color: var(--focustextcolor);
-    font-weight: 400;
+	color: var(--focustextcolor);
+	font-weight: 400;
 }
 
 .menu_contenu {
-    padding-bottom: .5rem;
+	padding-bottom: .5rem;
 }
 
-.menu_contenu:hover, .menu_titre:hover {
-    background-color: var(--primary-hover);
-    border-radius: var(--buttonradius);
+.menu_contenu:hover,
+.menu_titre:hover {
+	background-color: var(--primary-hover);
+	border-radius: var(--buttonradius);
 }
 
-.menu_contenu > a.vsmenu, .menu_titre > a.vmenu{
-    text-decoration: none;
-    display: inline-block;
-    /*width: 100%;*/
+.menu_contenu > a.vsmenu,
+.menu_titre > a.vmenu {
+	text-decoration: none;
+	display: inline-block;
+	/*width: 100%;*/
 }
 
-div.blockvmenupair, div.blockvmenuimpair {
-    border-bottom-color: var(--border-color);
+div.blockvmenupair,
+div.blockvmenuimpair {
+	border-bottom-color: var(--border-color);
 }
 
-ul.tmenu > .tmenusel, ul.tmenu > li.tmenu:hover {
-    background-color: var(--primary-hover);
+ul.tmenu > .tmenusel,
+ul.tmenu > li.tmenu:hover {
+	background-color: var(--primary-hover);
 }
 
-ul.tmenu > .tmenusel::after, ul.tmenu > li.tmenu:hover::after {
-    display: none;
+ul.tmenu > .tmenusel::after,
+ul.tmenu > li.tmenu:hover::after {
+	display: none;
 }
 
 div.tmenucenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .5rem;
-    padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: .5rem;
+	padding: 1rem;
 }
 
 div.mainmenu {
-    min-width: auto;
+	min-width: auto;
 }
 
-div.tabBar .fichecenter table.border > tbody > tr > td, div.tabBar .fichecenter div.border div div.tagtd, div.tabBar div.border div div.tagtd {
-    border-bottom: none;
+div.tabBar .fichecenter table.border > tbody > tr > td,
+div.tabBar .fichecenter div.border div div.tagtd,
+div.tabBar div.border div div.tagtd {
+	border-bottom: none;
 }
 
-div.tabBar .fichecenter table.border > tbody > tr > td:first-child, div.tabBar .fichecenter div.border div div.tagtd:first-child, div.tabBar div.border div div.tagtd:first-child {
-    font-size: 1rem;   
+div.tabBar .fichecenter table.border > tbody > tr > td:first-child,
+div.tabBar .fichecenter div.border div div.tagtd:first-child,
+div.tabBar div.border div div.tagtd:first-child {
+	font-size: 1rem;
 }
 
 a.tabTitle {
-    text-shadow: none;
+	text-shadow: none;
 }
 
 /* Border-bottom of all table items */
-div.tabBar .fichecenter table.border > tbody > tr > td:not(:first-child), div.tabBar .fichecenter div.border div div.tagtd:not(:first-child), div.tabBar div.border div div.tagtd:not(:first-child) {
-    border-bottom: 1px solid var(--border-color);
-    /*padding: 1rem .5rem;*/
-    padding-block: 1rem;
-    margin-bottom: .5rem;
+div.tabBar .fichecenter table.border > tbody > tr > td:not(:first-child),
+div.tabBar .fichecenter div.border div div.tagtd:not(:first-child),
+div.tabBar div.border div div.tagtd:not(:first-child) {
+	border-bottom: 1px solid var(--border-color);
+	/*padding: 1rem .5rem;*/
+	padding-block: 1rem;
+	margin-bottom: .5rem;
 }
 
 .underbanner {
-    /*border-bottom: 1px solid var(--border-color);*/
-    border-bottom: none;
+	/*border-bottom: 1px solid var(--border-color);*/
+	border-bottom: none;
 }
 
-@media only screen and (max-width: 880px, min-width: 544px) {
-    div.tmenucenter {
-        width: auto;
-    }
+@media only screen and (max-width: 880px,
+min-width: 544px) {
+	div.tmenucenter {
+		width: auto;
+	}
 }
 
-td.amount, span.amount, div.amount, b.amount {
-    color: var(--secondary);
+td.amount,
+span.amount,
+div.amount,
+b.amount {
+	color: var(--secondary);
 }
 
 .badge {
-    font-weight: 500 !important;
+	font-weight: 500 !important;
 }
 
 div.tmenudiv {
-    font-size: 0.92em;
+	font-size: 0.92em;
 }
 
-.border tbody tr, .bordernooddeven tbody tr, .border tbody tr td, .bordernooddeven tbody tr td, div.tabBar table.border tr, div.tabBar table.border tr td, div.tabBar div.border .table-border-row, div.tabBar div.border .table-key-border-col, div.tabBar div.border .table-val-border-col, tr.liste_titre.box_titre td table td, .bordernooddeven tr td {
-    height: auto;
+.border tbody tr,
+.bordernooddeven tbody tr,
+.border tbody tr td,
+.bordernooddeven tbody tr td,
+div.tabBar table.border tr,
+div.tabBar table.border tr td,
+div.tabBar div.border .table-border-row,
+div.tabBar div.border .table-key-border-col,
+div.tabBar div.border .table-val-border-col,
+tr.liste_titre.box_titre td table td,
+.bordernooddeven tr td {
+	height: auto;
 }
 
-.border tbody tr, .bordernooddeven tbody tr, div.tabBar table.border tr {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+.border tbody tr,
+.bordernooddeven tbody tr,
+div.tabBar table.border tr {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
 
-div.fichehalfleft tbody, div.fichehalfright tbody {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap-reverse;
-    justify-content: space-between;
+div.fichehalfleft tbody,
+div.fichehalfright tbody {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between;
 }
 
 div.fichehalfright tbody {
-    flex-direction: column;
+	flex-direction: column;
 }
 
-tr.liste_titre, tr.liste_titre_sel, form.liste_titre, form.liste_titre_sel, table.dataTable.tr, tagtr.liste_titre {
-    height: auto !important;
+tr.liste_titre,
+tr.liste_titre_sel,
+form.liste_titre,
+form.liste_titre_sel,
+table.dataTable.tr,
+tagtr.liste_titre {
+	height: auto !important;
 }
 
-table.liste, table.noborder, table.formdoc, div.noborder {
-    border-top: none;
+table.liste,
+table.noborder,
+table.formdoc,
+div.noborder {
+	border-top: none;
 }
 
 /* Fixing some task and home elements not being dark */
-.noborder:not(.editmode) > tbody > tr:nth-child(2n+1):not(.liste_titre):not(.nooddeven), .liste > tbody > tr:nth-child(2n+1):not(.liste_titre):not(.nooddeven), div:not(.fichecenter):not(.fichehalfleft):not(.fichehalfright) > .border > tbody > tr:nth-of-type(2n+1):not(.liste_titre):not(.nooddeven), .liste > tbody > tr:nth-of-type(2n+1):not(.liste_titre):not(.nooddeven), div:not(.fichecenter):not(.fichehalfleft):not(.fichehalfright) .oddeven.tagtr:nth-of-type(2n+1):not(.liste_titre):not(.nooddeven) {
-    background: var(--primary);
+.noborder:not(.editmode) > tbody > tr:nth-child(2n + 1):not(.liste_titre):not(.nooddeven),
+.liste > tbody > tr:nth-child(2n + 1):not(.liste_titre):not(.nooddeven),
+div:not(.fichecenter):not(.fichehalfleft):not(.fichehalfright) > .border > tbody > tr:nth-of-type(2n + 1):not(.liste_titre):not(.nooddeven),
+.liste > tbody > tr:nth-of-type(2n + 1):not(.liste_titre):not(.nooddeven),
+div:not(.fichecenter):not(.fichehalfleft):not(.fichehalfright) .oddeven.tagtr:nth-of-type(2n + 1):not(.liste_titre):not(.nooddeven) {
+	background: var(--primary);
 }
 
 .info-box-title {
-    color: var(--dimmedtext);
+	color: var(--dimmedtext);
 }
 
-.opened-dash-board-wrap .info-box, .opened-dash-board-wrap .info-box .info-box-icon {
-    border-radius: var(--buttonradius);
+.opened-dash-board-wrap .info-box,
+.opened-dash-board-wrap .info-box .info-box-icon {
+	border-radius: var(--buttonradius);
 }
 
 /* disabled text (no permission to use) */
-span.vsmenudisabled, font.vsmenudisabled, span.vmenudisabled, font.vmenudisabled {
-    /*font-style: italic;*/
-    color: var(--dimmedtext);
+span.vsmenudisabled,
+font.vsmenudisabled,
+span.vmenudisabled,
+font.vmenudisabled {
+	/*font-style: italic;*/
+	color: var(--dimmedtext);
+}
+
+/* UI Date Picker Widget Styling */
+.ui-datepicker .ui-datepicker-title select:first-child {
+	margin-right: .5rem;
+}
+
+.ui-datepicker .ui-datepicker-title select {
+	background-color: var(--primary);
+}
+
+/* Month day cell */
+.ui-datepicker-calendar .ui-state-default,
+.ui-datepicker-calendar .ui-widget-content .ui-state-default,
+.ui-datepicker-calendar .ui-widget-header .ui-state-default,
+.ui-datepicker-calendar .ui-button,
+html .ui-datepicker-calendar .ui-button.ui-state-disabled,
+html .ui-button.ui-state-disabled {
+	padding: .4rem .6rem;
+	text-align: center;
+	border-radius: 3px;
+	margin: 1px 1px;
+	background-color: var(--primary-hover);
+	color: var(--colortext);
+}
+
+.ui-datepicker-calendar .ui-state-default:hover,
+.ui-datepicker-calendar .ui-widget-content .ui-state-default:hover,
+.ui-datepicker-calendar .ui-widget-header .ui-state-default:hover,
+.ui-datepicker-calendar .ui-button,
+html .ui-datepicker-calendar .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active:hover {
+	background-color: var(--tertiary);
+}
+
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+	padding: .3rem .5rem;
+}
+
+.ui-widget-header {
+	background-color: var(--primary-hover);
+	border: none;
+}
+
+.ui-widget.ui-widget-content {
+	border: var(--border2);
+	width: auto;
+}
+
+.ui-widget-header .ui-icon {
+	filter: invert(1) hue-rotate(180deg);
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
+.ui-button:focus {
+	background-color: var(--primary);
+	border: none;
+}
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+	top: 15%;
 }
 
 
 /* Automatic light mode support depending on system settings */
 @media (prefers-color-scheme: light) {
-    body, img {
-        filter: invert(1) hue-rotate(180deg);
-    }
+	body,
+	img {
+		filter: invert(1) hue-rotate(180deg);
+	}
 }
