@@ -1,6 +1,7 @@
 /* Dolibarr Theme Rework by Asty' */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+body,
 * {
 
 	box-sizing: border-box;
@@ -117,6 +118,20 @@ input[type="text"] {
 	color: var(--colortext);
 }
 
+a:hover {
+	text-decoration: none;
+}
+
+.ui-tooltip,
+.mytooltip,
+.ui-widget-content,
+.ui-corner-all,
+.ui-widegt-shadow,
+.ui-widget,
+.ui-tooltip-content {
+	background-color: var(--primary);
+	color: var(--colortext);
+}
 
 .badge-secondary,
 .tabs .badge {
@@ -177,6 +192,10 @@ a.vsmenu:visited {
 	border: var(--border2) !important;
 }
 
+.select2-container-multi-dolibarr .select2-choices-dolibarr .select2-search-choice-dolibarr:hover {
+	background-color: var(--primary-hover) !important;
+}
+
 .paddingright {
 	padding-right: .5rem;
 }
@@ -217,8 +236,11 @@ a.vsmenu:visited {
 .button:not(.bordertransp):not(.buttonpayment),
 .buttonDelete:not(.bordertransp):not(.buttonpayment),
 .btnTitle,
-a.btnTitle {
+a.btnTitle,
+.button:not(.bordertransp):not(.buttonpayment),
+.buttonDelete:not(.bordertransp):not(.buttonpayment) {
 	border-radius: var(--buttonradius);
+	background-image: none;
 	background-color: var(--buttonbg);
 	color: var(--colortext);
 	border: none;
@@ -233,7 +255,7 @@ a.btnTitle {
 .btnTitle:hover,
 a.btnTitle:hover {
 	background-color: var(--buttonbghover);
-	border: var(--border2);
+	/*border: var(--border2);*/
 }
 
 .paginationafterarrows a.btnTitlePlus:hover span::before,
