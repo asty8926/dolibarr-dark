@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+
 :root {
     
     /* Custom */
@@ -46,18 +47,34 @@
     --colorbacktitle1: #21232E;
     --colortexttitle: var(--colortext);
     --colortexttitlelink: var(--colortext);
+    --colorbacklineimpair2: var(--tertiary);
+    --oddevencolor: var(--colortext);
+    --colorbacklinepairhover: var(--primary-hover);
     
     
     --boxshadow: 1px 2px 10px var(--colorbackvmenu1);
 }
 
-body, .mainmenuaspan {
+/* Applies the theme font to ALL elements that had explicit font assignment */
+body, .mainmenuaspan, a.vsmenu:link, a.vsmenu:visited, a.vsmenu:hover, a.vsmenu:active, span.vsmenu, tr.liste_titre th, th.liste_titre, tr.liste_titre td, td.liste_titre, form.liste_titre div, a.tab:link, a.tab:visited, a.tab:hover, a.tab#active, span.vsmenudisabled, font.vsmenudisabled, span.vmenudisabled, font.vmenudisabled, .oddeven, .evenodd, .pair, .nohover .pair:hover, tr.pair td.nohover, .tagtr.oddeven, div.blockvmenuhelp, input, input.flat, textarea, textarea.flat, form.flat select, select, select.flat, .dataTables_length label select, .button:not(.bordertransp):not(.buttonpayment), .buttonDelete:not(.bordertransp):not(.buttonpayment) {
     font-family: var(--fonts);
+}
+
+.badge-secondary, .tabs .badge {
+    color: var(--colortext) !important;
+    background-color: var(--secondary);
+}
+
+.marginleftonlyshort {
+    margin-left: 6px !important;
 }
 
 .side-nav {
     border-right: 1px solid var(--border-color);
     padding-inline: .5rem 1rem;
+    box-shadow: none;
+    height: calc(100vh - 3.15rem);
+    overflow-y: hidden;
 }
 
 /*.side-nav, .vmenu {
@@ -102,6 +119,32 @@ a.vmenu:link, a.vmenu:visited, a.vsmenu:link, a.vsmenu:visited {
     border-radius: var(--radius);
 }
 
+.dropdown-menu, .dropdown-menu > .user-footer {
+    background-color: var(--tertiary);
+    color: var(--colortext);
+    /*border-top: var(--border2);*/
+}
+
+.dropdown-menu > .user-body, .dropdown-body {
+    border-block: var(--border2);
+}
+
+.user-body, #topmenuloginmoreinfo-btn, #topmenulogincompanyinfo-btn, .dropdown-menu > .user-footer {
+    color: var(--colortext);
+}
+
+.user-footer .button-top-menu-dropdown {
+    border-radius: var(--buttonradius);
+    background-color: var(--secondary);
+    color: var(--colortext);
+    border: none;
+    padding: .5rem .9rem;
+}
+
+.user-footer .button-top-menu-dropdown:hover {
+    background-color: var(--buttonbghover);
+}
+
 .butActionRefused, .butAction, .butAction:link, .butAction:visited, .butAction:hover, .butAction:active, .butActionDelete, .butActionDelete:link, .butActionDelete:visited, .butActionDelete:hover, .butActionDelete:active {
     border-radius: var(--buttonradius);
     text-transform: none;   
@@ -112,6 +155,15 @@ a.vmenu:link, a.vmenu:visited, a.vsmenu:link, a.vsmenu:visited {
     background-color: var(--buttonbghover);
 }
 
+.button:not(.bordertransp):not(.buttonpayment), .buttonDelete:not(.bordertransp):not(.buttonpayment) {
+    text-transform: none;
+    font-weight: normal;
+}
+
+/* Add some right margin after icons in user pop-up button */
+.button-top-menu-dropdown > i.fa {
+    margin-right: .2rem;
+}
 
 div.phpdebugbar {
     display: none;
@@ -132,6 +184,7 @@ div.fiche {
     padding-top: 0;
     height: 100%;
     border: 1px solid var(--border-color);
+    color: var(--colortext);
 }
 
 div.tabs {
@@ -173,10 +226,6 @@ div.tabsElem:hover {
     background-color: var(--primary-hover) !important;
 }
 
-a.tab:link, a.tab:visited, a.tab:hover, a.tab#active {
-    font-family: var(--fonts);
-}
-
 div.tabsElem .tabactive a.tab {
     color: var(--focustextcolor);
     font-weight: 400;
@@ -193,6 +242,8 @@ div.tabsElem .tabactive a.tab {
 
 .menu_contenu > a.vsmenu, .menu_titre > a.vmenu{
     text-decoration: none;
+    display: inline-block;
+    /*width: 100%;*/
 }
 
 div.blockvmenupair, div.blockvmenuimpair {
@@ -289,4 +340,31 @@ tr.liste_titre, tr.liste_titre_sel, form.liste_titre, form.liste_titre_sel, tabl
 
 table.liste, table.noborder, table.formdoc, div.noborder {
     border-top: none;
+}
+
+/* Fixing some task and home elements not being dark */
+.noborder:not(.editmode) > tbody > tr:nth-child(2n+1):not(.liste_titre):not(.nooddeven), .liste > tbody > tr:nth-child(2n+1):not(.liste_titre):not(.nooddeven), div:not(.fichecenter):not(.fichehalfleft):not(.fichehalfright) > .border > tbody > tr:nth-of-type(2n+1):not(.liste_titre):not(.nooddeven), .liste > tbody > tr:nth-of-type(2n+1):not(.liste_titre):not(.nooddeven), div:not(.fichecenter):not(.fichehalfleft):not(.fichehalfright) .oddeven.tagtr:nth-of-type(2n+1):not(.liste_titre):not(.nooddeven) {
+    background: var(--primary);
+}
+
+.info-box-title {
+    color: var(--dimmedtext);
+}
+
+.opened-dash-board-wrap .info-box, .opened-dash-board-wrap .info-box .info-box-icon {
+    border-radius: var(--buttonradius);
+}
+
+/* disabled text (no permission to use) */
+span.vsmenudisabled, font.vsmenudisabled, span.vmenudisabled, font.vmenudisabled {
+    /*font-style: italic;*/
+    color: var(--dimmedtext);
+}
+
+
+/* Automatic light mode support depending on system settings */
+@media (prefers-color-scheme: light) {
+    body, img {
+        filter: invert(1) hue-rotate(180deg);
+    }
 }
