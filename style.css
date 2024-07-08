@@ -68,7 +68,11 @@ body,
 a.vsmenu:link,
 a.vsmenu:visited,
 a.vsmenu:hover,
-a.vsmenu:active,
+a.vmenu:active,
+a.vmenu:link,
+a.vmenu:visited,
+a.vmenu:hover,
+a.vmenu:active,
 span.vsmenu,
 tr.liste_titre th,
 th.liste_titre,
@@ -104,7 +108,8 @@ select.flat,
 .ui-widget select,
 .ui-widget textarea,
 .ui-widget button,
-.ui-widget {
+.ui-widget,
+* {
 	font-family: var(--fonts);
 }
 
@@ -321,8 +326,8 @@ div.tabs {
 	position: sticky;
 	top: 3rem;
 	border-bottom: 1px solid var(--border-color);
-	background-color: var(--primary);
-	backdrop-filter: var(glass);
+	background-color: var(--glassbg);
+	backdrop-filter: var(--glass);
 	box-shadow: var(--boxshadow);
 	z-index: 5;
 	padding-inline: var(--pad-inline);
@@ -617,11 +622,28 @@ html .ui-button.ui-state-disabled:active:hover {
 	top: 15%;
 }
 
-
 /* Automatic light mode support depending on system settings */
 @media (prefers-color-scheme: light) {
 	body,
 	img {
 		filter: invert(1) hue-rotate(180deg);
+		
 	}
+	.badge-secondary,
+	.tabs .badge,
+	.badge,
+	.badge-status4 {
+			color: white !important;
+		}
+	}
+
+@media only screen and (max-width: 1510px) {
+  div.tmenucenter {
+    width: 100%;
+	}
+}
+
+/* Removes disabled (no-permission) nav items */
+li.tmenu:has(span.tmenudisabled) {
+	display: none;
 }
